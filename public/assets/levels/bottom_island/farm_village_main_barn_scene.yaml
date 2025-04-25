@@ -1,0 +1,211 @@
+scene_id: 'farm_village_main_barn'
+scene_name: 'Farm Village'
+hour_value: 8
+scene_description: |
+  The land here smells of broken earth and splintered wood.
+  The old barns and family homes now lie collapsed in tangled heaps of timber and stone.
+  As reported by the locals, two survivors were last seen — one near the main barn, another inside the old farmhouse — but no one has heard from them since the shaking stopped.
+  You and your team stand at the edge of the wreckage, boots sinking into the muddy soil.
+survivors:
+  - little_girl:
+      name: 'Ava'
+      age: 8
+      description: 'Last seen wearing pink shoes'
+  - old_man:
+      name: 'Alan'
+      age: 50
+      description: 'Last seen at the farm barn'
+scene_dialogues:
+  - scene_1:
+      id: 'farm_village'
+      area_context: |
+        The earthquake has left the small farm village in chaos. Debris is scattered across the fields, and the air is thick with dust. Your rescue team arrives to discover that two victims are missing.
+        However, the locals have reported last seeing a little girl playing in the old farmhouse and a middle-age farmer in the main barn.
+        You decided to:
+      choices:
+        option_a: 
+          option_id: 'investigate_farmhouse'
+          text: 'Investigate the old farmhouse'
+          npc_dialogues:
+            player_1: 'Alright boys, there is a little girl waiting for us. Time to bring her home.'
+          flags: []
+        option_b: 
+          option_id: 'investigate_main_barn'
+          text: 'Investigate the main barn'
+          npc_dialogues:
+            player_1: 'Alright boys, listen up! We will search the main barn first. I want you to keep your eyes peeled for any signs of life. We need to find that farmer under this rubble'
+          flags: []
+  - scene_2:
+      id: 'investigate_main_barn'
+      area_context: |
+        Your team breaches the main barn, or what it used to be. A part of the silo next to it has collapsed, and the barn is filled with debris. 
+        The wooden beams groan under their own weight, and every step kicks up thick clouds of dust. 
+        Shafts of pale sunlight pierce through gaps in the broken roof, illuminating shattered tools, torn tarps, and piles of splintered wood.
+      npc_dialogues:
+        k9_handler_1: 'The house is not as big as the farmhouse, but it’s still a mess. Shadow, time to shine. Find that farmer, my boy'
+        narrative_1: 'Everyone try to clean the debris or at least make a path to safely search the barn'
+        k9_1: 'Woof! Woof!'
+        narrative_2: 'Shadow sniffs the air, tail wagging, and starts to lead the way'
+        k9_handler_2: 'I think he smells something. Let me check'
+        player_1: "Alright, but be careful. The farmer could be trapped under this debris. We need to be careful not to make things worse"
+        k9_handler_3: 'Roger that'
+        rescue_technician_1_1: 'Hey boss, is that a ladder over there?'
+        rescue_technician_2_1: 'Yeah, looks like it. I guess the farmer was trying to get to the second floor when the quake hit'
+        medic_1_1: "Hmmm, that's not good. If he was up there, he could have fallen and hit his head. We need to find him fast"
+        narrative_3: 'You look at the ladder, then at the debris. You try to make an assumption where could the farmer fall down. You decided to:'
+    choices:
+      option_a:
+        option_id: 'follow_k9'
+        text: "Follow Shadow and see what he finds"
+        npc_dialogues:
+          player_1: "Let's follow our furry friend. He seems to have picked up something"
+          everyone_1: 'Roger that, boss'
+        flags: []
+      option_b:
+        option_id: 'clear_debris_around_ladder'
+        text: 'Clear the debris around the ladder and search underground'
+        flags: []
+  - scene_3:
+      id: 'follow_k9'
+      npc_dialogues:
+        narrative_1: 'You and your team follow Shadow as he leads you toward the back of the barn'
+        narrative_2: 'But Shadow suddenly stops and his tail hangs low, it seems like he has lost the scent'
+        k9_handler_1: "It's okay, buddy. We'll find him. Just keep looking"
+        player_1: 'Alright, back to the ladder, we still need to check the debris around it'
+  - scene_4:
+      id: 'clear_debris_around_ladder'
+      npc_dialogues:
+        narrative_1: 'You and your team start clearing the debris around the ladder, moving each broken piece of wood and wall carefully'
+        narrative_2: 'But no matter how long have you been working, there is no sign of the farmer'
+      choices:
+        option_a:
+          option_id: 'continue_search'
+          text: 'Continue searching around the ladder'
+          flags: [increase_time_low, increase_stress_low]
+        option_b:
+          option_id: 'move_to_other_house'
+          text: 'Move to the other house near the barn'
+          flags: [increase_stress_low]
+  - scene_5:
+      id: 'continue_search'
+      npc_dialogues:
+        player_1: 'We need to keep looking, we have to make sure he is not here'
+        k9_handler_1: 'Alright buddy, try again and see if you can pick up the scent'
+        k9_1: 'Woof! Woof!'
+        narrative_1: 'After 30 minutes of searching, you and your team found nothing but broken pieces of wood and wall, not even a sign of life'
+        rescue_technician_1_1: 'Boss, I think we should check the other house. We have been here for too long and we are not making any progress'
+        player_2: "Welp, I guess we have no other choice. Let's move to the other house"
+      choices:
+        option_a:
+          option_id: 'move_to_other_house'
+          text: 'Move to the other house near the barn'
+          flags: [increase_stress_low]
+  - scene_6:
+      id: 'move_to_other_house'
+      npc_dialogues:
+        narrative_1: 'Saying the nearby house but it takes you a while to get there, the road is covered with debris and you have to walk around it'
+        narrative_2: 'In the distance, you can see two old farmhouses, and a voice of old man calling for help'
+        rescue_technician_3_1: 'Hey, over there! I saw someone!'
+        narrative_3: 'You and your team rush to the house, but the door is locked'
+        engineer_1: 'Move aside, I will break the door'
+        narrative_4: 'The engineer use the sledgehammer to break the door, and you and your team rush inside'
+        narrative_5: 'Only the roof is collapsed, and the walls are still standing. Under the debris, you can see the leg of a man'
+        old_man_1: 'Oh thank God! I thought I was going to die here!'
+        player_1: "Don't move, we are going to get you out of here"
+        old_man_2: 'Please be careful, I think my leg is broken'
+        player_2: 'Alright, we are going to lift the debris and get you out of here. Just hold on'
+      choices:
+        option_a:
+          option_id: 'lift_debris'
+          text: 'Carefully lift the debris'
+          flags: []
+        option_b:
+          option_id: 'stablize_structure'
+          text: 'Stabilize the structure first'
+          flags: [increase_time_low]
+  - scene_7:
+      id: 'lift_debris'
+      npc_dialogues:
+        narrative_1: 'Although you and your team carefully lift the debris, a loud sound echoes through the house'
+        old_man_1: 'Oh god, please be careful! I can not feel my leg anymore!'
+        player_1: 'Dang it! We should have stabilized the structure first'
+        medic_1_1: 'Boss, look! The blood is coming out of his leg!'
+        narrative_2: 'You decided to'
+      choices:
+        option_a:
+          option_id: 'apply_tourniquet'
+          text: 'Apply a tourniquet to stop the bleeding'
+          flags: [increase_time_low]
+        option_b:
+          option_id: 'stabilize_structure'
+          text: 'Stabilize the structure first'
+          flags: [increase_time_low]
+  - scene_8:
+      id: 'apply_tourniquet'
+      npc_dialogues:
+        narrative_1: 'Ethan quickly applies a tourniquet to the old man’s leg, stopping the bleeding'
+        old_man_1: 'Ha ha, such a relief! You should be a doctor!'
+        medic_2_1: 'I am a medic, actually'
+        player_1: 'Alright, let we get you out of here'
+      choices:
+        option_a:
+          option_id: 'stabilize_structure'
+          text: 'Stabilize the structure'
+          flags: []
+  - scene_9:
+      id: 'stabilize_structure'
+      npc_dialogues:
+        narrative_1: 'With experiences in rescue operations, you and your team quickly stabilize the structure'
+        narrative_2: 'The debris can be lifted without any risk of collapsing anything else'
+      choices:
+        option_a:
+          option_id: 'lift_debris_after_stabilizing'
+          text: 'Lift the debris'
+          flags: []
+  - scene_10:
+      id: 'lift_debris_after_stabilizing'
+      npc_dialogues:
+        old_man_1: 'Phew! That was close! Thank you so much!'
+        medic_2_1: 'Glad to help, but we need to get you out of here fast'
+        player_1: 'Just to confirm, your name is Alan right?'
+        old_man_2: 'Yes, it is me. I am the farmer of this land'
+        player_2: 'Alright Alan, do you have any other injuries?'
+        old_man_3: 'No no, just my leg. But what about other people?'
+        player_3: 'They are fine, except for you and the little girl at the old farmhouse'
+        old_man_4: 'Ava? Is she alright?'
+        medic_2_2: 'She is unconscious but alive'
+        old_man_5: 'Thank God! I was so worried about her, but what about her friends?'
+      choices:
+        option_a:
+          precondition: [farm_village_farmhouse_rescued]
+          option_id: 'other_friends'
+          text: 'We found her and her friends, they are not in good condition, also unconscious, but they are in the hospital now'
+          flags: [increase_stress_low]
+        option_b:
+          precondition: [farm_village_farmhouse_missing]
+          option_id: 'what_friends'
+          text: 'We are reported she was playing alone'
+          flags: [increase_stress_high]
+  - scene_11:
+      id: 'other_friends'
+      npc_dialogues:
+        old_man_1: "I can't say thank you enough. Please take me to the hospital, I need to see them"
+      choices:
+        option_a:
+          option_id: 'final_scene'
+          text: 'Take Alan to the hospital'
+  - scene_12:
+      id: 'what_friends'
+      npc_dialogues:
+        old_man_1: 'What? No, she was playing with her friends. There were three of them. Oh no, please tell me they are alright!'
+        narrative_1: 'You and your team look at each other, all of you are deep in terror'
+        narrative_2: 'You can feel shivers running down your spine, and you can see the fear in the eyes of your team'
+      choices:
+        option_a:
+          option_id: 'get_back_to_station'
+          text: 'Get back to the station and report the situation'
+          flag: [increase_stress_high]
+  - scene_13:
+      option_id: 'final_scene'
+      narrative_1: 'You and your team take Alan to the hospital, where he can be treated for his injuries'
+      narrative_2: 'At the hospital, you find Ava and her friends, all of them are awake and happy to see Alan'

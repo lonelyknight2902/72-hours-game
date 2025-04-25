@@ -1,0 +1,49 @@
+---
+scene_id: 'lighthouse'
+scene_name: 'Lighthouse'
+hour_value: 3
+scene_description: |
+  After finishing your mission at the church, your team and officer Ruth meet each other at the lighthouse. 
+  Standing at the survivors' camp, you see a woman tightly holding her daughter's hand, her eyes scanning the crowd with desperate hope. 
+  The girl clings to her mother, a small teddy bear tucked under her arm, as they wait for news of Adam, their husband and father, still missing since the earthquake.
+bad_ending_scene_dialogues:
+  - scene_1:
+      id: 'bad_ending'
+      npc_dialogues:
+        narrative_1: 'You approach the woman, her hopeful eyes meeting yours. Officer Ruth stands beside you, her expression heavy with sorrow.'
+        player_1: 'Are you Adam’s wife?'
+        wife_1: 'Yes, I’m Sarah. This is Emily. Please… is he okay?'
+        narrative_2: 'The words catch in your throat. Ruth steps forward, her voice gentle but firm.'
+        officer_1: 'Sarah, I’m so sorry. Adam… he didn’t make it. The collapse at the prison… we couldn’t save him.'
+        wife_2: 'No… please, no…'
+        narrative_3: 'Sarah crumples, sobs shaking her. Emily’s small hand grips her mother’s, her teddy bear falling to the ground as she cries.'
+        child_1: 'Daddy’s gone?'
+        officer_2: 'May we have some space ?'
+        player_2: 'Please do'
+        narrative_4: 'After several minutes, you can see Sarah wiping her tears, and have a small smile at her daughter'
+        player_3: 'What did you tell them ?'
+        officer_3: 'When you leave for Lily, we know that we have run out of time, Adam can not hold any longer, so he ask me a question'
+        narrative_5: 'You look at Officer Ruth, waiting for him to continue. He lights a cigar and takes a deep drag.'
+        officer_4: 'He asked what is the little girl name. It turns out he know that girl, she had already lost her mother years ago for a tragedy'
+        officer_5: 'He told us to forget him and move to help the girl, I was angry at how he just gave up, but then he just give me a lesson'
+        narrative_6: 'Without a dictionary, do you know the a SINGLE word to describe a father, a mother losing their child called ?'
+        player_4: '...'
+        officer_6: 'A man lost his wife is a widower, a woman lost her husband is a widow, a child lost their parent is an orphan'
+        narrative_7: 'Officer Ruth voice becomes trembling'
+        officer_7: 'But man, there is not a single word to describe one who lost their child, I asked him why?'
+        officer_8: 'He laughed and told that no word can describe the pain of a person losing their child'
+        narrative_8: 'You ask officer Ruth for a cigar, you hold the ignited cigar for a long time'
+        narrative_9: 'The camp grows quiet, the lighthouse beam cutting through the dusk. You walk away, the weight of their grief lingering like the cold sea wind.'
+good_ending_scene_dialogues:
+  - scene_1:
+      id: 'good_ending'
+      npc_dialogues:
+        narrative_1: 'Your team arrives at the camp, Adam walking beside you, battered but alive, his eyes searching for his family.'
+        adam_1: 'Sarah? Emily?'
+        wife_1: 'Adam! Oh, thank God!'
+        narrative_2: 'Sarah and Emily rush forward, tears streaming. Emily leaps into Adam’s arms, her teddy bear pressed between them, as Sarah wraps them both in a fierce hug.'
+        child_1: 'Daddy, you’re here!'
+        adam_2: 'I promised I’d come back, didn’t I?'
+        narrative_3: 'The team watches, hearts warmed by the reunion. Ruth smiles faintly, her hand on your shoulder.'
+        officer_ruth_1: 'This makes it all worth it.'
+        narrative_4: 'The lighthouse beam glows softly, illuminating the family’s embrace. Amid the chaos, their love shines as a beacon of hope.'

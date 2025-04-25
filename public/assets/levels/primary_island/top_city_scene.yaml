@@ -1,0 +1,18 @@
+---
+scene_id: 'middle_school'
+scene_name: 'Middle School'
+hour_value: 20
+scene_description: |
+  You and your team arrive at the middle school, its once-vibrant halls now a crumbling ruin under the wrath of the earthquake. 
+  Other international rescue teams are already on site, their faces etched with despair as they shake their heads at you, a silent admission of defeat. 
+  The air is thick with dust and grief, the cries of bereaved parents echoing against the shattered walls, a stark reminder of nature’s merciless power.
+scene_dialogues:
+  - scene_1:
+      id: 'middle_school'
+      area_context: ''
+      npc_dialogues: 
+        narrative_1: 'Your team is assigned to help other team clear the debris at a building of eight grade classes'
+        narrative_2: "But when standing in front of what used to be called classroom, all of you don't say anything at all"
+        narrative_3: 'Each of member just do your work, helping to move the students out of the debris'
+        narrative_4: 'You stopped counting when the number reach 100...'
+        narrative_5: 'Hours and hours, you never forget the joy when a rescue technician asking a medic to help him, a boy is still conscious'

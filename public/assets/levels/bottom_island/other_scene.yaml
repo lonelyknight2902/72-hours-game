@@ -1,0 +1,19 @@
+---
+scene_id: 'other_scene'
+scene_name: 'Other nearby villages'
+hour_value: 4
+scene_description: |
+  The nearby villages are lucky and have not been affected dramatically by the earthquake. However, the local authorities request your help to have a look at the area
+  and check whether they need any assistance. You and your team can get back to the farm village later to continue the search for the missing survivors.
+scene_dialogues:
+  - scene_1:
+      id: 'other_scene'
+      area_context: |
+        The nearby villages are lucky and have not been affected dramatically by the earthquake. However, the local authorities request your help to have a look at the area
+        and check whether they need any assistance. You and your team can get back to the farm village later to continue the search for the missing survivors.
+      npc_dialogues:
+        narrative_1: 'You and your team arrive at the nearby villages. The locals are grateful for your presence and are eager to show you around.'
+        narrative_2: 'The local authorities explain that they have not been affected by the earthquake, but they are worried about the aftershocks and want to ensure their safety.'
+        narrative_3: 'You and your team decide to help the locals by checking their homes and ensuring everything is in order.'
+        narrative_4: 'As you walk through the village, you notice a few houses that seem to have minor damage. You decide to check them out.'
+        narrative_5: 'Luckily, the houses are not too damaged, you and your team are able to help bandage the wounds for the locals and help them with minor scratches and bruises.'

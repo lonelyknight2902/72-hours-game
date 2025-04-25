@@ -1,0 +1,166 @@
+---
+scene_id: 'farm_village_farmhouse'
+scene_name: 'Farm Village'
+hour_value: 5
+scene_description: |
+  The land here smells of broken earth and splintered wood.
+  The old barns and family homes now lie collapsed in tangled heaps of timber and stone.
+  As reported by the locals, two survivors were last seen — one near the main barn, another inside the old farmhouse — but no one has heard from them since the shaking stopped.
+  You and your team stand at the edge of the wreckage, boots sinking into the muddy soil.
+survivors:
+  - little_girl:
+      name: 'Ava'
+      age: 8
+      description: 'Last seen wearing pink shoes'
+  - middle_age_farmer:
+      name: 'Alan'
+      age: 50
+      description: 'Last seen at the farm barn'
+scene_dialogues:
+  - scene_1:
+      id: 'farm_village'
+      area_context: |
+        The earthquake has left the small farm village in chaos. Debris is scattered across the fields, and the air is thick with dust. Your rescue team arrives to discover that two victims are missing.
+        However, the locals have reported last seeing a little girl playing in the old farmhouse and a middle-age farmer in the main barn.
+        You decided to:
+      choices:
+        option_a: 
+          option_id: 'investigate_farmhouse'
+          text: 'Investigate the old farmhouse'
+          npc_dialogues:
+            player_1: 'Alright boys, there is a little girl waiting for us. Time to bring her home.'
+          flags: []
+        option_b: 
+          option_id: 'investigate_main_barn'
+          text: 'Investigate the main barn'
+          npc_dialogues:
+            player_1: 'Alright boys, listen up! We will search the main barn first. I want you to keep your eyes peeled for any signs of life. We need to find that farmer under this rubble'
+          flags: []
+  - scene_2:
+      id: 'investigate_farmhouse'
+      area_context: |
+        Your team breaches the farmhouse, stepping over splintered beams and shattered furniture. The air’s thick with dust, and every creak of the structure puts you on edge. 
+        You frown at the debris under your feet, and try to look for any signs of life and movement.
+      npc_dialogues:
+        k9_handler_1: 'I know this is a farmhouse, but my god, everything is ... just gone. Looks like a bomb hit it. Shadow’s picking up something, but this place feels like it’s gonna bury us too'
+        narrative_1: 'Shadow lets out a sharp bark, tail stiff, nose buried in the debris'
+        k9: 'Woof! Woof!'
+        narrative_2: 'Marcus pats his flank, his eyes darting to you for guidance'
+        k9_handler_2: 'I know, I know. I’m trying to get a read on it. Just stay close, buddy'
+        engineer_1: "This place is hanging by a thread, commander. I can try to shore up some of this debris to get us a path to the back room, but one wrong move and we're all under it. Tell me how you want to play this"
+        narrative_3: 'You nod to Amira, who starts to work on the debris. You decided to:'
+      choices:
+        option_a:
+          option_id: 'follow_k9'
+          text: "Direct the team to follow Shadow's lead"
+          npc_dialogues:
+            player_1: "Let's follow Shadow. He seems to have picked up something"
+            narrative_1: 'You and your team follow Shadow, he leads the team to a debris where Amira is working to clear a path'
+            narrative_2: 'The whole team froze as they saw a little hand sticking out under the debris, not far away from the surface'
+          flags: ['increase_stress_low']
+        option_b:
+          option_id: 'systematic_search'
+          text: 'Systematically search the farmhouse based on the layout'
+          npc_dialogues:
+            player_1: "We need to search this place systematically. We can't afford to miss anything. Shadow is good, but we need to be thorough"
+            narrative_1: 'You and your team start searching the farmhouse, moving carefully through the wreckage'
+            narrative_2: 'The whole team froze as they saw a little hand sticking out under the debris of the kitchen, not far away from the surface'
+          flags: ['increase_stress_low']
+  - scene_3:
+      id: 'follow_k9'
+      npc_dialogues:
+        narrative_1: 'Diego and Chen do not hesitate to start clearing the debris, while Marcus and Shadow try to figure out if there is any other person trapped under the debris'
+        narrative_2: 'Luckily, the debris is not too heavy, and the team manages to clear it away quickly'
+        narrative_3: 'But under the debris, the owner of the hand is a little boy not the girl, the team is looking for'
+        narrative_4: 'You look at Tanaka not far away, and call her'
+        player_1: 'Tanaka! Come here!'
+        narrative_5: 'Tanaka rushes to your side, her eyes wide with concern'
+        medic_1: "A boy? Oh no, there is another boy?"
+        narrative_6: 'Tanaka checks his pulse, and you can see the relief wash over his face'
+        medic_2: "He's alive! But he's unconscious. We need to get him out of here"
+        narrative_7: 'Shadow suddenly barks, and you turn to see him sniffing at the debris not far away'
+        player_2: 'Tanaka, can you bring the boy to Ethan? I think Shadow found something else'
+        medic_3: 'Roger that, commander'
+        k9_1: 'Woof! Woof!'
+        k9_handler_1: 'I think he found the girl'
+        narrative_8: 'You and your team rush to the spot where Shadow is sniffing and barking repeatedly, his paws scraping at a pile of rubble'
+        narrative_9: "You don't see anything but Shadow locked on the spot, barking and whining"
+        player_3: 'You decided to:'
+      choices:
+        option_a:
+          option_id: 'clear_debris'
+          text: 'Clear the debris immediately!'
+          flags: []
+        option_b:
+          option_id: 'mark_location'
+          text: 'Mark the location and prioritize clearing safe areas first!'
+          flags: []
+  - scene_4:
+      id: 'clear_debris'
+      npc_dialogues:
+        narrative_1: 'Diego looks carefully at the debris, and then shout to the team'
+        rescue_technician_1: "I saw a small pink shoe under the debris. I think it's her"
+        narrative_2: 'You and Chen start clearing the debris immediately, Ivan and Liam help to move the heavier pieces to create a surround safety area'
+        narrative_3: 'After 30 minutes, the team success to see her face and the rest of her body'
+        rescue_technician_2: 'We got her! We got her!'
+        narrative_4: 'The girl is unconscious, but she is alive. You can see her chest moving up and down'
+        player_1: "Good job, team. Let's get her out of here"
+      choices:
+        option_a:
+          option_id: 'final_scene'
+          text: 'Finish the mission'
+          flags: [increase_time_low, finish_farm_house_mission]
+        option_b:
+          option_id: 'continue_searching'
+          text: 'Continue searching the area'
+          flags: []
+  - scene_5:
+      id: 'mark_location'
+      npc_dialogues:
+        narrative_1: 'After placing a red flag on the spot, you and your team continue searching other areas of the farmhouse'
+        narrative_2: 'After 30 minutes, you see a small blue sandal under the collapsed walls in the corner of the back room'
+        player_1: 'Everyone over here! I think I found our little girl'
+        narrative_3: 'You and your team rush to the spot where you saw the sandal, and start clearing the debris'
+        narrative_4: 'After 15 minutes, the team success to see her face and the rest of her body'
+        rescue_technician_1: 'Haha! We got her! We got her! She is unconscious but her pulse is strong!'
+        player_2: 'Moving out! Let take her to the medic!'
+      choices:
+        option_a:
+          option_id: 'final_scene'
+          text: 'Finish the mission'
+          flags: [increase_time_low, finish_farm_house_mission]
+        option_b:
+          option_id: 'continue_searching_marked_location'
+          text: 'Back to the marked location'
+          flags: [increase_time_low]
+  - scene_6:
+      id: 'continue_searching_marked_location'
+      npc_dialogues:
+        narrative_1: 'You and your team head back to the marked location, and start clearing the debris'
+        narrative_2: 'Everyone surprised to see another little girl under the debris, not far away from the first one'
+        player_1: 'Oh dear, if we ended the mission, we would have left her behind'
+        rescue_technician_1: 'I know you got it boss, we are lucky to find her!'
+        rescue_technician_2: "Don't forget Shadow helped us too"
+        k9_handler_1: "Who's a good boy?"
+        narrative_3: 'Shadow wags his tail, and you can see the pride in his eyes'
+        k9_1: 'Woof! Woof! Woof!'
+  - scene_7:
+      id: 'continue_searching'
+      npc_dialogues:
+        narrative_1: 'Shadow stops at the corner of the back room, and starts sniffing the debris, his paws scraping at a pile of rubble and discovers a blue sandal'
+        narrative_2: 'Everyone surprised to see another little girl under the debris, not far away from the first one'
+        player_1: 'Oh dear, if we ended the mission, we would have left her behind'
+        rescue_technician_1: 'I know you got it boss, we are lucky to find her!'
+        rescue_technician_2: "Don't forget Shadow helped us too"
+        k9_handler_1: "Who's a good boy?"
+        narrative_3: 'Shadow wags his tail, and you can see the pride in his eyes'
+        k9_1: 'Woof! Woof! Woof!'
+      choices:
+        option_a:
+          option_id: 'final_scene'
+          text: 'Finish the mission'
+          flags: []
+  - scene_8:
+      id: 'final_scene_8'
+      npc_dialogues:
+        player_1: "Good job, team. Let's get them out of here, the locals can help us to take care of them"

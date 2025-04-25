@@ -1,0 +1,52 @@
+---
+scene_id: 'small_village_church'
+scene_name: 'Small Village Church'
+hour_value: 5
+scene_description: |
+  You and your team arrive at the church, where another team is tirelessly clearing debris. They’ve been working for hours but can’t find a way to reach the little girl trapped inside. Her faint cries echo through the rubble, growing weaker by the minute. Desperation chokes the air as the other team’s commander, voice breaking, begs for your help to find a path before the unstable structure collapses entirely.
+scene_dialogues:
+  - scene_1:
+      id: 'church'
+      npc_dialogues:
+        player_1: 'What’s the situation?'
+        other_team_commander_1: 'It’s dire. We can hear her, but she’s buried deep. The debris keeps shifting—we’re running out of time.'
+        narrative_1: 'The girl’s cries pierce the silence, urging you to act. You assess the crumbling church, feeling the weight of every second.'
+        player_2: 'We need to move fast. Any options?'
+        medic_1: 'There’s a narrow gap we could try, but it’s unstable—could collapse on us.'
+        rescue_technician_1: 'We could brace the walls first, but it’ll take time, and she’s fading.'
+        narrative_2: 'The team’s faces are grim, eyes darting to the rubble. Her cries weaken, and a chill grips your heart.'
+        narrative_3: 'Everyone try to clear the debris, but the amount of work is out of no where, the debris seems to be indefinite'
+        narrative_4: 'Surprisingly, you see your team and officer Ruth come to help, you want to ask Adam situation but looking at their eyes, you know it is not time for that'
+        narrative_4: 'Hours and hours, your team finally create a narrow gap enough for one person to reach the little girl'
+        narrative_5: 'You decided to:'
+      choices:
+        option_a:
+          option_id: 'enter_gap'
+          text: 'Crawl through the narrow gap to reach her.'
+          flags: [increase_stress_high]
+        option_b:
+          option_id: 'brace_walls'
+          text: 'Brace the walls before digging.'
+          flags: [increase_stress_high]
+  - scene_2:
+      id: 'enter_gap'
+      npc_dialogues:
+        narrative_1: 'You crawl into the tight gap, debris scraping your skin. Her voice is barely a whisper now, guiding you through the dark.'
+        player_1: 'Hold on, I’m almost there!'
+        narrative_2: 'The walls groan loudly, and dust chokes the air. You see her—Lily—motionless, eyes closed.'
+        player_2: 'Lily, please, wake up!'
+        narrative_3: 'You reach for her, but a sickening crack splits the air. The ceiling collapses, forcing you back. The gap seals shut, silencing her forever.'
+        other_team_commander_1: 'No… no, we were so close…'
+        narrative_4: 'You stumble out, hands bloodied, heart heavy. The team stands in stunned silence as the church bells toll, a mournful echo of loss.'
+  - scene_3:
+      id: 'brace_walls'
+      npc_dialogues:
+        narrative_1: 'Your team scrambles to brace the walls, sweat and dust mixing. Her cries stop, replaced by an eerie silence.'
+        rescue_technician_1: 'It’s stable—let’s dig!'
+        narrative_2: 'You clear the rubble, but it’s too late. You find Lily—still,her body cold.'
+        player_1: 'No… we were too slow…'
+        medic_1: 'She’s gone. There’s nothing we could’ve done.'
+        narrative_3: 'The other commander bows his head, tears falling. The team stands frozen, guilt and grief sinking in.'
+        other_team_commander_1: 'We failed her…'
+        narrative_4: 'As you leave the church, the sun hides behind clouds. The bells toll faintly, a final lament for Lily, lost to the rubble.'
+---

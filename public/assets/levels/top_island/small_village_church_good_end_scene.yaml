@@ -1,0 +1,75 @@
+---
+scene_id: 'small_village_church'
+scene_name: 'Small Village Church'
+hour_value: 8
+scene_description: |
+  You and your team arrive at the church, where another team is tirelessly clearing debris. 
+  They’ve been working for hours but can’t find a way to the little girl trapped inside. 
+  Her faint cries echo through the rubble, and desperation grips the air. 
+  The other team’s commander, eyes filled with worry, calls out, pleading for your help to find a path before the unstable structure collapses.
+scene_dialogues:
+  - scene_1:
+      id: 'church'
+      npc_dialogues:
+        player_1: 'What’s the situation?'
+        other_team_commander_1: 'Thank God you’re here. It’s bad—she’s deep in the debris. We can see her, but we can’t get through.'
+        narrative_1: 'After a quick exchange, you investigate the rubble. The girl’s soft sobs pierce the silence, urging you to act.'
+        player_2: 'We need a plan, fast. Any ideas?'
+        medic_1_1: 'There’s a narrow gap we could try, but it’s risky—one wrong move could bring it all down.'
+        rescue_technician_1: 'Or we could reinforce the structure first, but that’ll take time she might not have.'
+        narrative_2: 'You glance at the team, their faces tense but determined. The girl’s cries grow weaker, and your heart aches to save her.'
+        narrative_3: 'Everyone try to clear the debris, but the amount of work is out of no where, the debris seems to be indefinite'
+        narrative_4: 'Surprisingly, you see your team and officer Ruth come to help, you want to ask Adam situation but looking at their eyes, you know it is not time for that'
+        narrative_5: 'Hours and hours, your team finally create a narrow gap enough for one person to reach the little girl'
+        narrative_6: 'You decided to:'
+      choices:
+        option_a:
+          option_id: 'enter_gap'
+          text: 'Crawl through the narrow gap to reach her.'
+          flags: [increase_stress_low]
+        option_b:
+          option_id: 'reinforce_structure'
+          text: 'Reinforce the structure before moving forward.'
+          flags: [increase_stress_low]
+  - scene_2:
+      id: 'enter_gap'
+      npc_dialogues:
+        narrative_1: 'You volunteer to crawl through the tight gap, heart pounding as debris shifts around you. The girl’s voice guides you, faint but clear.'
+        player_1: 'Hang on, sweetheart, I’m coming.'
+        narrative_2: 'The walls groan, but you push forward, scraping your hands. Finally, you see her—small, curled up.'
+        girl_1: 'Are you… here to save me?'
+        player_2: 'Yes, we’re getting you out. Hold on to me.'
+        narrative_3: 'You carefully lift her, her tiny arms clinging to you. The team cheers softly as you emerge, dust-covered but triumphant. The commander’s eyes glisten with tears.'
+        other_team_commander_1: 'You did it… thank you.'
+        narrative_4: 'As the medic wraps her in a blanket, the girl whispers her name—Lily. The church bells, miraculously intact, ring faintly, as if celebrating her rescue.'
+      choices:
+        option_a:
+          option_id: 'reunite_family'
+          text: 'Search for Lily’s family immediately.'
+          flags: [decrease_stress_medium]
+  - scene_3:
+      id: 'reinforce_structure'
+      npc_dialogues:
+        narrative_1: 'Your team works quickly to shore up the walls, sweat mixing with dust. The girl’s cries weaken, spurring you on.'
+        rescue_technician_1: 'It’s holding! We can dig now!'
+        narrative_2: 'With the structure stabilized, you clear a path. You find her—Lily—curled up, her eyes wide with fear.'
+        player_1: 'Lily, we’re here. You’re safe now.'
+        girl_1: 'I… I thought no one would come.'
+        narrative_3: 'You carry her out to cheers from both teams. The medic checks her, and she clings to you, trembling but alive.'
+        other_team_commander_1: 'You gave us hope today. Thank you.'
+        narrative_4: 'As Lily is wrapped in a blanket, the church bells toll softly, a quiet hymn of survival.'
+      choices:
+        option_a:
+          option_id: 'reunite_family'
+          text: 'Search for Lily’s family immediately.'
+          flags: []
+  - scene_4:
+      id: 'reunite_family'
+      npc_dialogues:
+        narrative_1: 'You search the village, guided by the other team’s radio. At the edge of the square, a woman runs toward you, sobbing.'
+        mother_1: 'Lily! My baby!'
+        narrative_2: 'Lily’s eyes light up as she wriggles free, running to her mother. They collapse in an embrace, tears streaming.'
+        lily_1: 'Mama, they saved me!'
+        narrative_3: 'The team watches, some wiping their eyes. The mother mouths “thank you” as she holds her daughter tight.'
+        player_1: 'Take care of her.'
+        narrative_4: 'As you turn to leave, the sun breaks through the clouds, casting a warm glow over the church. You feel a quiet pride—today, you brought a family back together.'

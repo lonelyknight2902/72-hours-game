@@ -1,0 +1,292 @@
+scene_id: 'small_village'
+scene_name: 'Small Village'
+hour_value: 30
+scene_description: |
+  The small village used to be a bustling place, but now it lies in ruins. The houses are dilapidated, and the streets are shower with criers.
+  Many suvivors have taken refuge in the safe zone, a fortified empty area in the center of the village. The local police force has reported that some of people are still missing.
+  Aside from the help of local forces, you are requested for help to find the missing people in two areas: the old church and the local prison.
+  You and your team are tasked with finding and rescuing the missing people in tthese two locations.
+  The rescue is not easy, as these areas are under heavy debris and the risk of collapse is high. Make you decisions wisely.
+survivors:
+  - ex_prisoner:
+    name: 'Adam'
+    age: 40
+    description: 'A former prisoner who served his time for 12 years and returned to the village today, yearning to hold his daughter and reunite with his wife. Last seen near the local prison'
+  - teenage_girl:
+    name: 'Lily'
+    age: 14
+    description: 'A kind-hearted girl who spends her free time volunteering at the old church. Loved by all for her selflessness, she was last seen helping in the church before the quake'
+scene_dialogues:
+  - scene_1:
+    id: 'small_village'
+    area_context: |
+      You and your time arrived to a small town called Favira. This town is known for its beautiful landscapes and friendly people, or at least what it used to be in your memory.
+      In the center of the town, you see a group of tents and makeshift shelters, where the survivors are taking refuge. Your team are greeted by the local police
+      who are trying to help the survivors. Two person are reported to be missing, and the police are asking for your team help.
+      Normally, you would prioritize the children first, but the church is quite far from the shelter, and there is another rescue group nearby the church, where
+      Lily was last seen, they are already on their way to the church.
+    choices:
+      option_a:
+        option_id: 'investigate_prison'
+        text: 'Investigate the local prison'
+        npc_dialogues:
+          player_1: 'Thank you for your information officer. We will head to the local prison first'
+          officer_1: "It's my job to help. But be careful when you get there. The prison is in a bad shape, and the risk of further collapse is high"
+          officer_2: 'But hey boss, may I ask you something?'
+          player_2: 'Sure, what is it?'
+          narrative_1: 'The officer looks at you, his lips moving but no sound comes out. He seems to be struggling to find the right words'
+          officer_3: 'Adam, the ex-prisoner, today supposed to be the day he was released. He was supposed to meet his wife and daughter'
+          officer_4: 'You know we can get lost sometimes, he had paid his debt to society, and he was looking forward to starting a new life'
+          officer_5: 'I have prepared some money for him to start over, I hope you will find him alive'
+          narrative_2: 'You look at the officer, and nod your head'
+          player_3: 'We will do our best to bring him back to you'
+          narrative_3: 'After that you and the officer is deep in silence, and you can see the officer is trying to hold back his tears'
+          player_4: 'How old is his daughter?'
+          officer_6: 'She is 12 years old now, his wife was pregnant when he was arrested. He never spend a day with her'
+          narrative_4: "You look at the officer, you don't know what to say, aside from nodding your head again"
+          narrative_5: 'Your team finally arrives at the local prison, and in front of your eyes, nothing but a pile of debris and dust'
+          rescue_technician_1: 'Alright boss, we are here. What do you want us to do?'
+        choices:
+          option_a:
+            option_id: 'request_k9'
+            text: 'Request the K9 unit to search for Adam'
+            flags: []
+  - scene_2:
+      id: 'request_k9'
+      npc_dialogues:
+        player_1: 'Time for our little boy to shine. Shadow, search for any signs of life'
+        k9_handler_1: 'You hear that Shadow? Time to work'
+        k9_1: 'Woof! Wooooof!'
+        narrative_1: 'Shadow starts sniffing around, his tail wagging left and right'
+        player_2: 'Officer Ruth, where is the last place you saw Adam?'
+        officer_1: 'He was last seen in the library, he was told to stay there waiting for release papers'
+        narrative_2: 'You try to look around, but everything you see is just a pile of debris'
+        player_3: 'Can you try to remember where is the library?'
+        officer_2: 'I think it is on the second floor, but now the second floor is gone'
+        k9_2: 'Woooof'
+        k9_handler_2: 'It seems like Shadow found nothing around here'
+        player_4: 'Alright boys, split up try to identify the library, try to look for pile of books or anything that looks like a library'
+        everyone_1: 'Roger that, boss'
+      choices:
+        option_a:
+          option_id: 'follow_k9'
+          text: 'Continue to follow Shadow'
+          flags: []
+        option_b:
+          option_id: 'split_with_other'
+          text: 'Split up with other members'
+          flags: [increase_stress_medium]
+          npc_dialogues:
+            player_1: 'Ethan, Ivan, Liam, you three follow me. The rest of you, split up with Shadow and Marcus and officer Ruth to search the other side of the prison'
+            narrative_1: 'Four of you keep moving forward, while looking for any signs of life, or anything looks suspicious'
+            narrative_2: 'After several hours, Ethan suddenly stops and points to a pile of debris not far away'
+            medic_2_1: 'Wait, is that a pile of books?'
+            narrative_3: 'You and team carefully approach the pointed debris, and a pile of books is indeed there'
+            rescue_technician_2_1: 'Let me check it out'
+            narrative_4: 'Ivan examines the pile of books, then shake his head'
+            rescue_technician_2_2: 'They are just some documents, more like a room for the officers not the library'
+            narrative_5: 'You use the talkie to call Marcus and Shadow'
+            player_2: 'Marcus, anything?'
+            k9_handler_1: 'Nothing boss, Shadow is not picking up anything'
+            narrative_6: 'You decided to:'
+          choices:
+            option_a:
+              option_id: 'continue_search'
+              text: 'Continue searching'
+              flags: ['increase_stress_medium']
+            option_b:
+              option_id: 'have_a_break'
+              text: 'Have a break'
+              flags: ['decrease_stress_medium']
+  - scene_3:
+      id: 'continue_search'
+      npc_dialogues:
+        player_1: "Alright, let's keep searching. We need to find Adam"
+        narrative_1: 'You and your team continue searching the area, but you find nothing'
+        narrative_2: 'After several hours, you and your team are exhausted and hungry'
+        medic_2_1: 'I think we should take a break, boss. We have been searching for hours and we are not getting anywhere'
+        player_2: "I know, but we need to find Adam. We can't leave him behind"
+        narrative_3: 'You look at the team, they are all exhausted and worried'
+        player_3: 'I agree with Ethan. We need to take a break and regroup with the others'
+        narrative_4: 'Suddenly, your talkie rang and you hear Marcus voice'
+        k9_handler_1: 'Boss, officer Ruth and Shadow found the library. We need you to come here'
+      choices:
+        option_a:
+          option_id: 'get_back_to_team'
+          text: 'Get back to the team'
+          flags: []
+  - scene_4:
+      id: 'have_a_break'
+      npc_dialogues:
+        player_1: "Let's take a break, we have been searching for hours and we are not getting anywhere"
+        narrative_1: 'You and your team sit down on the broken piece of walls, and try to relax'
+        medic_2_1: 'About Adam, do you think he is still alive?'
+        player_2: 'I hope so, his wife and daughter are waiting for him'
+        rescue_technician_4_1: 'I knew Adam, he was on the news everywhere. He was a good guy, but he made a mistake'
+        narrative_2: 'You can see Liam is trying to talk, his lips moving but no sounds come out'
+        rescue_technician_4_2: '...'
+        medic_2_2: 'And he paid for it, he served his time and now he is free'
+        player_3: 'I know, that is why we are here. I know we can not make any promises, but may God be with us'
+        narrative_4: 'Suddenly, your talkie rang and you hear Marcus voice'
+        k9_handler_1: 'Boss, officer Ruth and Shadow found the library. We need you to come here'
+      choices:
+        option_a:
+          option_id: 'get_back_to_team'
+          text: 'Get back to the team'
+          flags: []
+  - scene_5:
+      id: 'get_back_to_team'
+      npc_dialogues:
+        narrative_1: 'When you arrive at Marcus and the others, you can see Shadow sit down and wagging his tail'
+        officer_1: 'Adam, can you hear me ?'
+        ex_prisoner_1: 'Thank God! Ruth is that you?'
+        officer_2: 'Yes, the rescue team is here. Are you hurt?'
+        ex_prisoner_2: 'I am fine, but I don know how long the walls can hold'
+        medic_2_1: 'Do you have any injuries?'
+        ex_prisoner_3: 'Minor scratches, but I am fine'
+        narrative_2: 'You try to look down the debris, and the shiver runs down your spine'
+        player_2: 'Ivan, have a look'
+        rescue_technician_2_1: 'Oh dear, this is not good'
+        officer_3: 'What is it?'
+        rescue_technician_2_2: 'The walls are about to collapse, but he is deep inside the debris'
+        narrative_3: 'You look at the officer, and you can see the fear in his eyes'
+        officer_4: 'Wait a minute, I will call for backup'
+        narrative_4: 'But out of nowhere, the ground shakes for a few minutes, and your team can hear a loud noise'
+        rescue_technician_3_1: 'Oh no no no, Adam can you hear me?'
+        narrative_5: 'This time there is no answer, and when you look down the debris, you can no loger see Adam'
+        player_3: 'Listen up! We will try to clear the debris, but we need to be extremely careful'
+        medic_2_2: 'Should we try to find another way?'
+      choices:
+        option_a:
+          option_id: 'clear_debris'
+          text: 'Clear the debris immediately!'
+          flags: [increase_stress_medium]
+        option_b:
+          option_id: 'find_other_way'
+          text: 'Try to investigate the surrounding area'
+          flags: [increase_stress_low]
+  - scene_6:
+      id: 'clear_debris'
+      npc_dialogues:
+        narrative_1: 'Your team carefully clear the debris piece by piece, but the walls groan omniously with every movement. Dust fills the air, and the visibility is low'
+        player_1: 'Keep it steady everyone. We can’t afford mistakes'
+        rescue_technician_1_1: 'The structure is shifting, I can feel it'
+        medic_1_1: "If we don't get to Adam soon, his injuries could worsen"
+        narrative_2: 'Suddenly a sharp crack echoes through the ruins. A chunk of debris shifts, pinning Shadow’s leash under a slab. The dog whimpers but stays calm'
+        k9_handler_1: 'Damn it! Shadow is stuck. Hang there my boy'
+        player_2: 'We got two problems now, Ivan, Chen you go help Marcus and Shadow, the rest of the team keep clearing'
+        narrative_3: 'You glance at the trembling walls, then at your team’s strained faces. Time is running out, and the weight of the decision presses on you'
+        narrative_4: 'Under the debris, you hear a quite groan'
+        player_3: 'Did you guys hear that ?'
+        officer_1: 'Adam, can you hear me ?'
+        narrative_5: 'The response is nothing but a chilling silence'
+        narrative_6: 'You decided to:'
+      choices:
+        option_a:
+          option_id: 'find_other_way'
+          text: 'Try to find another way to Adam'
+          flags: [increase_stress_low]
+  - scene_7:
+      id: 'find_other_way'
+      npc_dialogues:
+        narrative_1: 'You stand away from the clearing debris to have an overview, scanning the surroundings for another way to reach Adam'
+        narrative_2: 'Something under the debris catch your eyes, it is ventilation shaft'
+        player_1: 'Ethan! Come over here!'
+        medic_1_1: 'Moving boss! Is it a ventilation shaft ?'
+        player_2: 'I guess so, let see what is inside'
+        narrative_3: 'You look into the shaft and at the other end, you see a man unconscious'
+        player_3: 'Adam, Adam, can you hear me?'
+        narrative_4: 'The man reacts to your voice, he slowly open his eyes'
+        ex_prisoner_1: 'I think the collapse wall broke my leg'
+        medic_1_2: 'Stay there, we will try to bring some water for you'
+        narrative_5: 'You can hear Marcus voice from the other side of the debris'
+        k9_handler_1: 'Boss, Shadow is okay, no need to worry'
+        player_4: 'Take some water, we need him here'
+        narrative_6: 'Shadow and Marcus move towards you, both of them '
+        k9_handler_2: 'Move my boy, take some water to Adam'
+        k9_1: 'Woof! Woof!'
+        narrative_7: 'Fortunately, Adam manages to open the water bottle and take a sip. It’s his first small drink since the earthquake'
+      choices:
+        option_a:
+          option_id: 'continue_to_clear_debris'
+          text: 'Continue to clear the debris to make a way from the current side'
+          flags: [increase_stress_medium]
+        option_b:
+          option_id: 'create_new_path_from_shaft'
+          text: 'Create new path to Adam from the ventilation shaft'
+          flags: []
+  - scene_8:
+      id: 'continue_to_clear_debris'
+      npc_dialogues:
+        narrative_1: 'The sun is dropping, you and your team have just already made half way to Adam'
+        officer_1: 'Hey Adam, you know what ? I prepared money for you, I kept my words, now it is your turn'
+        ex_prisoner_1: 'Ha ha glad to hear that my old friend, '
+        officer_2: 'We will get you out of there, your little girl is waiting for you'
+        ex_prisoner_2: 'Is she okay?'
+        officer_3: 'She is waiting for you at the lighthouse, there is a rescue team there, no need to worry'
+        ex_prisoner_3: 'Thank you man'
+        narrative_2: 'You and Ethan look at each other, you try to start a conversation'
+        player_1: 'How long can he hold ?'
+        medic_2_1: 'Not too long, we need to take him out of there before morning, or else he may be unconscious due to blood loss'
+        player_2: 'I see'
+        narrative_3: 'Officer Ruth come to you with his worry on his eyes'
+        officer_4: 'Uhm boss, can I have small talk with you?'
+        narrative_4: 'You feel the temperature plummet, and your instincts warn you that something bad is about to happen.'
+        narrative_5: 'You and Ruth walk away from the team'
+        officer_5: 'The team rescuing the girl at the church request your help, the situation there is not any better'
+        player_3: 'I can let some team members here with you, the other can move there to help him'
+        officer_6: 'I guess it is the only choice we have now'
+      choices:
+        option_a:
+          option_id: 'final_scene'
+          text: 'You decided to split the team and move to the church'
+          flags: [bad_adam_ending]
+  - scene_9:
+    id: 'create_new_path_from_shaft'
+    npc_dialogues:
+      narrative_1: 'Although the new path from the shaft seems to be longer than the old path, it still take some time to clear the debris'
+      narrative_2: 'When the sun is dropping, you almost reach Adam, you are separated by just 2 meters'
+      narrative_3: 'Officer Ruth sit next to the ventilation shaft, he inhale a puff of smoke, and begin to speak'
+      officer_1: 'Hey Adam, you know what ? I prepared money for you, I kept my words, now it is your turn'
+      ex_prisoner_1: 'Ha ha glad to hear that my old friend, '
+      officer_2: 'We will get you out of there, your little girl is waiting for you'
+      ex_prisoner_2: 'Is she okay?'
+      officer_3: 'She is waiting for you at the lighthouse, there is a rescue team there, no need to worry'
+      ex_prisoner_3: 'Thank you man'
+      narrative_4: 'You and Ethan look at each other, you try to start a conversation'
+      player_1: 'How long can he hold ?'
+      medic_2_1: 'Not too long, we need to take him out of there before morning, or else he may be unconscious due to blood loss'
+      player_2: 'I see'
+      narrative_5: 'Officer Ruth come to you with his worry on his eyes'
+      officer_4: 'Uhm boss, can I have small talk with you?'
+      narrative_6: 'You feel the temperature plummet, and your instincts warn you that something bad is about to happen.'
+      narrative_7: 'You and Ruth walk away from the team'
+      officer_5: 'The team rescuing the girl at the church request your help, the situation there is not any better'
+      player_3: 'We are almost there, let take Adam out of here and save the little girl'
+      officer_6: "But the girl, Lily, I don't think she can hold any longer, may be some man can help me here, and the other can go with you"
+      narrative_6: 'Now it is your time to make a decision'
+    choices:
+      option_a:
+        option_id: 'final_scene'
+        text: 'You decided to split the team and move to the church'
+        flags: []
+      option_b:
+        option_id: 'rescue_adam'
+        text: 'Finish rescuing Adam and move to the church'
+        flags: [decrease_stress_medium, bad_lily_ending]
+  - scene_10:
+      id: 'final_scene'
+      npc_dialogues:
+        rescue_technician_1_1: 'What happen boss ? You looks worried'
+        player_1: 'Alright guys, we have some issues at the church, the other team needs our help'
+        player_2: 'Amira, Chen, Liam, and Ethan, you stay with officer Ruth to rescue Adam'
+        player_3: 'The other comes with me, the car from the local authority is waiting for us on the street'
+        narrative_1: 'Everyone looks at each other, they do have their worry, but order is order'
+  - scene_11:
+      id: 'rescue_adam'
+      npc_dialogues:
+        narrative_1: 'After small break, you and your team continue to remove the debris'
+        narrative_2: 'When the sun rise again, it is also the moment you are able to see Adam whole body'
+        medic_1_1: 'You are tough Adam, time to take you to the hospital'
+        narrative_3: "You can see the relief on everyone's face, officer Ruth can hold his tears anymore"
+        narrative_4: 'After seeing Adam being taken to the hospital, you and your team gather and move to the church'
